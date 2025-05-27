@@ -20,6 +20,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.MapGet("/", () => Results.Redirect("/swagger"));
+
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
