@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeRentAppMaui", "HomeRentAppMaui\HomeRentAppMaui.csproj", "{1AEAC286-1EA6-4F11-BB40-D057E5B70802}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeRentAppApi", "HomeRentAppApi\HomeRentAppApi.csproj", "{733F7910-0DF6-4200-8161-35C7F24AA705}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeRentAppShared", "HomeRentAppShared\HomeRentAppShared.csproj", "{A0243D4F-41CF-482B-B961-F24C8E0D3C95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +21,14 @@ Global
 		{1AEAC286-1EA6-4F11-BB40-D057E5B70802}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AEAC286-1EA6-4F11-BB40-D057E5B70802}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1AEAC286-1EA6-4F11-BB40-D057E5B70802}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{733F7910-0DF6-4200-8161-35C7F24AA705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{733F7910-0DF6-4200-8161-35C7F24AA705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{733F7910-0DF6-4200-8161-35C7F24AA705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{733F7910-0DF6-4200-8161-35C7F24AA705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0243D4F-41CF-482B-B961-F24C8E0D3C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0243D4F-41CF-482B-B961-F24C8E0D3C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0243D4F-41CF-482B-B961-F24C8E0D3C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0243D4F-41CF-482B-B961-F24C8E0D3C95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
