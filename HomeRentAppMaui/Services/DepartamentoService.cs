@@ -9,7 +9,7 @@ namespace HomeRentAppMaui.Services
 
         public DepartamentoService()
         {
-            _httpClient = new HttpClient
+            _httpClient = new HttpClient 
             {
                 BaseAddress = new Uri("http://localhost:5026") 
             };
@@ -20,6 +20,12 @@ namespace HomeRentAppMaui.Services
             return await _httpClient.GetFromJsonAsync<List<Departamento>>("/api/departamento")
                 ?? new List<Departamento>(); //Aqui se retorna una lista vacia en caso de ser null
         }
+        public async Task<bool> CrearDepartamentoAsync(Departamento nuevo)
+        {
+            var response = await _httpClient.PostAsJsonAsync("/api/departamento", nuevo);
+            return response.IsSuccessStatusCode;
+        }
+
 
     }
 }

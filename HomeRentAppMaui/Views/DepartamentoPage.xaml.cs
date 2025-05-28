@@ -18,4 +18,9 @@ public partial class DepartamentoPage : ContentPage
         var lista = await _service.ObtenerDepartamentosAsync();
         DepartamentosCollection.ItemsSource = lista;
     }
+
+    private async void OnAgregarDepartamentoClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new AgregarDepartamentoPage());
+    }
 }
