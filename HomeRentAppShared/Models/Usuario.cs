@@ -27,6 +27,6 @@ namespace HomeRentAppShared.Models
 
         [Required]
         [MaxLength(100)]
-        public string? Contrasena { get; set; }
+        public string? Contraseña { get; set; }
     }
 }

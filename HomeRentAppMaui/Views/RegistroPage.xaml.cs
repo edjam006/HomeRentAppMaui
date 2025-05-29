@@ -20,7 +20,7 @@ namespace HomeRentAppMaui.Views
                 Nombre = NombreEntry.Text,
                 Apellido = ApellidoEntry.Text,
                 Correo = CorreoEntry.Text,
-                Contrasena = PasswordEntry.Text
+                Contraseña = PasswordEntry.Text
             };
 
             bool exito = await _usuarioService.RegistrarUsuarioAsync(nuevoUsuario);
