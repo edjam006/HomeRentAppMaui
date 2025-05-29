@@ -6,8 +6,11 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
-            <Entry x:Name="NombreEntry" Placeholder="Nombre"/>
-            <Entry x:Name="DireccionEntry" Placeholder="Dirección"/>
+            <Image x:Name="PreviewImage" HeightRequest="200"/>
+            <Button Text="Seleccionar Imagen" Clicked="OnSeleccionarImagenClicked" />
+
+            <Entry x:Name="NombreEntry" Placeholder="Nombre" />
+            <Entry x:Name="DireccionEntry" Placeholder="Dirección" />
             <Entry x:Name="PrecioEntry" Placeholder="Precio" Keyboard="Numeric"/>
             <Entry x:Name="CuartosEntry" Placeholder="Cuartos Disponibles" Keyboard="Numeric"/>
 

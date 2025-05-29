@@ -12,15 +12,11 @@
         Title="Login" 
         ContentTemplate="{DataTemplate views:LoginPage}" 
         Route="LoginPage" />
-    
+
     <ShellContent
         Title="Departamentos"
         ContentTemplate="{DataTemplate views:DepartamentoPage}"
         Route="DepartamentoPage" />
-    <ShellContent 
-        Title="Inicio" 
-        ContentTemplate="{DataTemplate views:IndexPage}" 
-        Route="IndexPage" />
 
     <ShellContent 
         Title="Registro" 
