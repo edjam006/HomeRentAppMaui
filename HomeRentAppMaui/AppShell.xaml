@@ -8,6 +8,11 @@
     Title="HomeRentAppMaui">
 
 
+    <ShellContent 
+        Title="Login" 
+        ContentTemplate="{DataTemplate views:LoginPage}" 
+        Route="LoginPage" />
+    
     <ShellContent
         Title="Departamentos"
         ContentTemplate="{DataTemplate views:DepartamentoPage}"
@@ -16,12 +21,7 @@
         Title="Inicio" 
         ContentTemplate="{DataTemplate views:IndexPage}" 
         Route="IndexPage" />
-    
-    <ShellContent 
-        Title="Login" 
-        ContentTemplate="{DataTemplate views:LoginPage}" 
-        Route="LoginPage" />
-    
+
     <ShellContent 
         Title="Registro" 
         ContentTemplate="{DataTemplate views:RegistroPage}" 

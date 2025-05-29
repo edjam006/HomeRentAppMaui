@@ -78,6 +78,9 @@
 	  <Compile Update="Views\Index.xaml.cs">
 	    <DependentUpon>Index.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\RegistroPage.xaml.cs">
+	    <DependentUpon>RegistroPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -93,7 +96,7 @@
 	  <MauiXaml Update="Views\Login.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Registro.xaml">
+	  <MauiXaml Update="Views\RegistroPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

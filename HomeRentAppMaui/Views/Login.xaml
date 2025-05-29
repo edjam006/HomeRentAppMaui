@@ -12,5 +12,11 @@
         <Entry x:Name="PasswordEntry" IsPassword="True"/>
 
         <Button Text="Ingresar" Clicked="OnLoginClicked"/>
+        <Button
+            x:Name="irAregistro"
+            Text="Registrarse"
+            TextColor="#5A31F4"
+            BackgroundColor="Transparent"
+            Clicked="irAregistro_Clicked" />
     </VerticalStackLayout>
 </ContentPage>

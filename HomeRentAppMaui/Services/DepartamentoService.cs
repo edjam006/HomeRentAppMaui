@@ -11,7 +11,7 @@ namespace HomeRentAppMaui.Services
         {
             _httpClient = new HttpClient 
             {
-                BaseAddress = new Uri("http://localhost:5026") 
+                BaseAddress = new Uri("https://localhost:7003") 
             };
         }
 
@@ -22,6 +22,9 @@ namespace HomeRentAppMaui.Services
         }
         public async Task<bool> CrearDepartamentoAsync(Departamento nuevo)
         {
+            nuevo.Imagen ??= "dGVzdA==";
+            nuevo.UsuarioId ??= Preferences.Get("UsuarioId", string.Empty);
+
             var response = await _httpClient.PostAsJsonAsync("/api/departamento", nuevo);
             return response.IsSuccessStatusCode;
         }
