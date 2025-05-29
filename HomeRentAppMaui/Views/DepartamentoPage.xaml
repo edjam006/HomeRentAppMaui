@@ -2,8 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:HomeRentAppShared.Models;assembly=HomeRentAppShared"
+             xmlns:helpers="clr-namespace:HomeRentAppMaui.Helpers"
              x:Class="HomeRentAppMaui.Views.DepartamentoPage"
              Title="Departamentos">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <helpers:Base64ToImageConverter x:Key="Base64ToImageConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ScrollView>
         <VerticalStackLayout Padding="10" Spacing="10">
@@ -13,13 +20,23 @@
                     TextColor="White"
                     CornerRadius="10" />
 
-            <CollectionView x:Name="DepartamentosCollection">
-                <CollectionView.ItemTemplate>
+            <FlexLayout x:Name="DepartamentosLayout"
+                        Direction="Row"
+                        Wrap="Wrap"
+                        JustifyContent="Start"
+                        BindableLayout.ItemsSource="{Binding}">
+                <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="models:Departamento">
-                        <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="10">
+                        <Frame WidthRequest="320"
+                               Margin="5"
+                               BorderColor="Gray"
+                               CornerRadius="10"
+                               Padding="10"
+                               HasShadow="True">
                             <VerticalStackLayout Spacing="5">
                                 <Image Source="{Binding Imagen, Converter={StaticResource Base64ToImageConverter}}"
-                           HeightRequest="150" Aspect="AspectFill"/>
+                                       HeightRequest="150"
+                                       Aspect="AspectFill"/>
                                 <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="16"/>
                                 <Label Text="{Binding Direccion}" FontSize="14"/>
                                 <Label Text="{Binding Precio, StringFormat='Precio: {0:C}'}" FontSize="14"/>
@@ -28,9 +45,8 @@
                             </VerticalStackLayout>
                         </Frame>
                     </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -16,7 +16,7 @@ public partial class DepartamentoPage : ContentPage
     private async Task LoadDepartamentos()
     {
         var lista = await _service.ObtenerDepartamentosAsync();
-        DepartamentosCollection.ItemsSource = lista;
+        DepartamentosLayout.BindingContext = lista;
     }
 
     private async void OnAgregarClicked(object sender, EventArgs e)
