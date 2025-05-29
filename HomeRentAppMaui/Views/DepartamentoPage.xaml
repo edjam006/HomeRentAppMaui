@@ -5,27 +5,32 @@
              x:Class="HomeRentAppMaui.Views.DepartamentoPage"
              Title="Departamentos">
 
-    <VerticalStackLayout Padding="10">
-        <Button Text="Agregar Departamento" 
-                Clicked="OnAgregarDepartamentoClicked"
-                BackgroundColor="#ff6600"
-                TextColor="White"
-                CornerRadius="10"
-                HeightRequest="40"
-                Margin="0,0,0,10"/>
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="10">
+            <Button Text="Agregar Departamento"
+                    Clicked="OnAgregarClicked"
+                    BackgroundColor="Orange"
+                    TextColor="White"
+                    CornerRadius="10" />
 
-        <CollectionView x:Name="DepartamentosCollection">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:Departamento">
-                    <Frame BorderColor="#ccc" CornerRadius="10" Padding="10" Margin="0,5">
-                        <VerticalStackLayout>
-                            <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="18"/>
-                            <Label Text="{Binding Direccion}" FontSize="14"/>
-                            <Label Text="{Binding Precio, StringFormat='Precio: {0:C}'}" FontSize="14" TextColor="Green"/>
-                        </VerticalStackLayout>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </VerticalStackLayout>
+            <CollectionView x:Name="DepartamentosCollection">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Departamento">
+                        <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="10">
+                            <VerticalStackLayout Spacing="5">
+                                <Image Source="{Binding Imagen, Converter={StaticResource Base64ToImageConverter}}"
+                           HeightRequest="150" Aspect="AspectFill"/>
+                                <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="16"/>
+                                <Label Text="{Binding Direccion}" FontSize="14"/>
+                                <Label Text="{Binding Precio, StringFormat='Precio: {0:C}'}" FontSize="14"/>
+                                <Label Text="{Binding CuartosDisponibles, StringFormat='Cuartos: {0}'}" FontSize="14"/>
+                                <Button Text="Ver Departamento" BackgroundColor="Orange" TextColor="White"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
