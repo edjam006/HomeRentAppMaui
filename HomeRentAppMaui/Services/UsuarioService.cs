@@ -25,5 +25,24 @@ namespace HomeRentAppMaui.Services
             var response = await _httpClient.PostAsJsonAsync("/api/Usuarios", usuario);
             return response.IsSuccessStatusCode;
         }
+        public async Task<Usuario?> IniciarSesionAsync(string usuarioId, string contrasena)
+        {
+            var loginData = new
+            {
+                UsuarioId = usuarioId,
+                Contrasena = contrasena
+            };
+
+            var response = await _httpClient.PostAsJsonAsync("/api/usuarios/login", loginData);
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadFromJsonAsync<Usuario>();
+            }
+
+            return null;
+        }
+
+
+
     }
 }

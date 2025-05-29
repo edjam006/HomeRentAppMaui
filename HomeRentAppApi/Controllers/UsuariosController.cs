@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using HomeRentAppApi.Data;
 using HomeRentAppShared.Models;
+using HomeRentAppApi.DTOs;
+
 
 namespace HomeRentAppApi.Controllers
 {
@@ -69,5 +71,26 @@ namespace HomeRentAppApi.Controllers
 
             return NoContent();
         }
+
+
+        [HttpPost("login")]
+        public async Task<ActionResult<Usuario>> Login([FromBody] LoginRequest loginData)
+        {
+            if (loginData.UsuarioId is null || loginData.Contrasena is null)
+                return BadRequest("UsuarioId o Contraseña vacíos");
+
+            var usuario = await _context.Usuarios
+                .FirstOrDefaultAsync(u => u.UsuarioId == loginData.UsuarioId && u.Contrasena == loginData.Contrasena);
+
+            if (usuario == null)
+            {
+                return Unauthorized("Credenciales incorrectas");
+            }
+
+            return usuario;
+        }
+
+
+
     }
 }
