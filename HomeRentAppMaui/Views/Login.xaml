@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HomeRentAppMaui.Views.LoginPage">
-
+             x:Class="HomeRentAppMaui.Views.LoginPage"
+             Title="Iniciar Sesión">
     <Grid>
         <Image Source="background_app.jpg"
                Aspect="AspectFill"
@@ -17,14 +17,25 @@
             <Label Text="Contraseña"/>
             <Entry x:Name="PasswordEntry" IsPassword="True"/>
 
-            <Button Text="Ingresar" Clicked="OnLoginClicked"/>
-            <Button
-            x:Name="irAregistro"
-            Text="Registrarse"
-            TextColor="#5A31F4"
-            BackgroundColor="Transparent"
-            Clicked="irAregistro_Clicked" />
+            
+            <StackLayout Grid.Row="1" Grid.Column="1"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center">
+                <Button Text="Ingresar" 
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        TextColor="Black"
+                        BackgroundColor="Beige"
+                        Clicked="OnLoginClicked"/>
+                <Button
+                    x:Name="irAregistro"
+                    Text="Registrarse"
+                    WidthRequest="100"
+                    HeightRequest="40"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    Clicked="irAregistro_Clicked" />
+            </StackLayout>
         </VerticalStackLayout>
     </Grid>
-    
 </ContentPage>

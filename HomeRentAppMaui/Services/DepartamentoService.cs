@@ -9,9 +9,9 @@ namespace HomeRentAppMaui.Services
 
         public DepartamentoService()
         {
-            _httpClient = new HttpClient 
+            _httpClient = new HttpClient
             {
-                BaseAddress = new Uri("http://localhost:5026") 
+                BaseAddress = new Uri("http://localhost:5026")
             };
         }
 
