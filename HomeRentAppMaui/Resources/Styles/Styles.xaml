@@ -48,6 +48,26 @@
             </VisualStateGroupList>
         </Setter>
     </Style>
+    <Style x:Key="DepartamentoCardStyle" TargetType="Frame">
+        <Setter Property="WidthRequest" Value="300" />
+        <Setter Property="HeightRequest" Value="360" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="HasShadow" Value="True" />
+        <Setter Property="BorderColor" Value="Orange" />
+        <Setter Property="BackgroundColor" Value="White" />
+    </Style>
+
+    <Style x:Key="VerButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Orange" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+    </Style>
+
+
 
     <Style TargetType="CheckBox">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />

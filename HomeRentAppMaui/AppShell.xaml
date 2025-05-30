@@ -4,24 +4,27 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:HomeRentAppMaui.Views"
-    Shell.FlyoutBehavior="Disabled"
-    Title="HomeRentAppMaui">
-
-
+    Shell.FlyoutBehavior="Disabled">
     <ShellContent 
-        Title="Login" 
         ContentTemplate="{DataTemplate views:LoginPage}" 
         Route="LoginPage" />
+    <TabBar>
+        <ShellContent 
+            Title="DEPARTAMENTOS"
+            ContentTemplate="{DataTemplate views:DepartamentoPage}" 
+            Route="DepartamentoPage" 
+            Icon="home.png" />
 
-    <ShellContent
-        Title="Departamentos"
-        ContentTemplate="{DataTemplate views:DepartamentoPage}"
-        Route="DepartamentoPage" />
+        <ShellContent 
+            Title="PERFIL"
+            ContentTemplate="{DataTemplate views:PerfilPage}" 
+            Route="PerfilPage"
+            Icon="perfil.png" />
 
-    <ShellContent 
-        Title="Registro" 
-        ContentTemplate="{DataTemplate views:RegistroPage}" 
-        Route="RegistroPage" />
-
-
+        <ShellContent 
+            Title="AGREGAR"
+            ContentTemplate="{DataTemplate views:AgregarDepartamentoPage}" 
+            Route="AgregarDepartamento"
+            Icon="perfil.png" />    
+    </TabBar>
 </Shell>
