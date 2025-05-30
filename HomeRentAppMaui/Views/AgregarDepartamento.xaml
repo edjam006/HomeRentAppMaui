@@ -13,7 +13,7 @@
         <ScrollView>
             <VerticalStackLayout Padding="20" Spacing="15">
                 <Image x:Name="PreviewImage" HeightRequest="200"/>
-                <Button Text="Seleccionar Imagen" Clicked="OnSeleccionarImagenClicked" />
+                <Button Text="Seleccionar Imagen" Clicked="OnSeleccionarImagenClicked" Style="{StaticResource VerButtonStyle}"/>
 
                 <Entry x:Name="NombreEntry" Placeholder="Nombre" />
                 <Entry x:Name="DireccionEntry" Placeholder="Dirección" />
@@ -22,9 +22,8 @@
 
                 <Button Text="Guardar"
                         Clicked="OnGuardarClicked"
-                        BackgroundColor="Green"
-                        TextColor="White"
-                        CornerRadius="10"/>
+                        CornerRadius="10"
+                        Style="{StaticResource VerButtonStyle}"/>
             </VerticalStackLayout>
         </ScrollView>
     </Grid>

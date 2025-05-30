@@ -4,10 +4,20 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:HomeRentAppMaui.Views"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarBackgroundColor="Orange"
+    Shell.TabBarTitleColor="Black"
+    Shell.TabBarUnselectedColor="#777777"
+    Shell.TabBarDisabledColor="#F44336">
+
     <ShellContent 
-        ContentTemplate="{DataTemplate views:LoginPage}" 
-        Route="LoginPage" />
+        Route="LoginPage"
+        ContentTemplate="{DataTemplate views:LoginPage}" />
+    <ShellContent 
+        Route="RegistroPage"
+        ContentTemplate="{DataTemplate views:RegistroPage}" />
+
     <TabBar>
         <ShellContent 
             Title="DEPARTAMENTOS"
@@ -25,6 +35,6 @@
             Title="AGREGAR"
             ContentTemplate="{DataTemplate views:AgregarDepartamentoPage}" 
             Route="AgregarDepartamento"
-            Icon="perfil.png" />    
+            Icon="perfil.png" />
     </TabBar>
 </Shell>

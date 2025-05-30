@@ -1,5 +1,3 @@
-using HomeRentAppMaui.Helpers;
-
 namespace HomeRentAppMaui.Views
 {
     public partial class LoginPage : ContentPage
@@ -23,9 +21,6 @@ namespace HomeRentAppMaui.Views
             {
                 await DisplayAlert("Error", "Usuario o contraseña incorrectos", "OK");
             }
-            Sesion.UsuarioId = usuario; // donde `usuario` es el ID que el usuario ingresó
-            await Shell.Current.GoToAsync("//DepartamentoPage");
-
         }
 
 

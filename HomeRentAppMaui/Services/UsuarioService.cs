@@ -16,7 +16,7 @@ namespace HomeRentAppMaui.Services
         {
             _httpClient = new HttpClient
             {
-                BaseAddress = new Uri("http://localhost:5026") 
+                BaseAddress = new Uri("http://localhost:5026")
             };
         }
 
