@@ -1,26 +1,21 @@
 using HomeRentAppShared.Models;
 using HomeRentAppMaui.Services;
+using HomeRentAppMaui.ViewModels;
 
-namespace HomeRentAppMaui.Views;
 
-public partial class DepartamentoPage : ContentPage
+namespace HomeRentAppMaui.Views
 {
-    private readonly DepartamentoService _service = new();
-
-    public DepartamentoPage()
+    public partial class DepartamentoPage : ContentPage
     {
-        InitializeComponent();
-        _ = LoadDepartamentos();
-    }
+        public DepartamentoPage()
+        {
+            InitializeComponent();
+            BindingContext = new DepartamentoViewModel();
+        }
 
-    private async Task LoadDepartamentos()
-    {
-        var lista = await _service.ObtenerDepartamentosAsync();
-        DepartamentosLayout.BindingContext = lista;
-    }
-
-    private async void OnAgregarClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new AgregarDepartamentoPage());
+        private async void OnAgregarClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AgregarDepartamentoPage());
+        }
     }
 }

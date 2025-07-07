@@ -21,10 +21,10 @@
         <ScrollView>
             <VerticalStackLayout Padding="10" Spacing="10">
                 <FlexLayout x:Name="DepartamentosLayout"
-                            Direction="Row"
-                            Wrap="Wrap"
-                            JustifyContent="Start"
-                            BindableLayout.ItemsSource="{Binding}">
+                    Direction="Row"
+                    Wrap="Wrap"
+                    JustifyContent="Start"
+                    BindableLayout.ItemsSource="{Binding Departamentos}">   
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="models:Departamento">
                             <Frame Style="{StaticResource DepartamentoCardStyle}">
