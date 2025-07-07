@@ -1,7 +1,7 @@
 using HomeRentAppShared.Models;
 using HomeRentAppMaui.Services;
 using HomeRentAppMaui.ViewModels;
-
+using SQLite;
 
 namespace HomeRentAppMaui.Views
 {
@@ -10,12 +10,21 @@ namespace HomeRentAppMaui.Views
         public DepartamentoPage()
         {
             InitializeComponent();
-            BindingContext = new DepartamentoViewModel();
+            BindingContext = new DepartamentoLocalViewModel();
         }
 
         private async void OnAgregarClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AgregarDepartamentoPage());
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (BindingContext is DepartamentoLocalViewModel vm)
+            {
+                vm.CargarDepartamentos(); // asegúrate de hacerlo público
+            }
+        }
+
     }
 }

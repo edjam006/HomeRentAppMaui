@@ -3,18 +3,22 @@ using HomeRentAppShared.Models;
 using System.Text;
 using System.IO;
 using HomeRentAppMaui.Helpers;
+using HomeRentAppMaui.ViewModels;
+using SQLite;
 
 
 namespace HomeRentAppMaui.Views;
-
 public partial class AgregarDepartamentoPage : ContentPage
 {
-    private readonly DepartamentoService _service = new();
+    public DepartamentoLocalViewModel ViewModel { get; set; }
+
     private string _imagenBase64 = string.Empty;
 
     public AgregarDepartamentoPage()
     {
         InitializeComponent();
+        ViewModel = new DepartamentoLocalViewModel();
+        BindingContext = ViewModel;
     }
 
     private async void OnSeleccionarImagenClicked(object sender, EventArgs e)
@@ -35,6 +39,7 @@ public partial class AgregarDepartamentoPage : ContentPage
                 _imagenBase64 = Convert.ToBase64String(memory.ToArray());
 
                 PreviewImage.Source = ImageSource.FromStream(() => new MemoryStream(memory.ToArray()));
+                ViewModel.NuevoDepartamento.Imagen = _imagenBase64;
             }
         }
         catch (Exception ex)
@@ -44,27 +49,13 @@ public partial class AgregarDepartamentoPage : ContentPage
     }
 
     private async void OnGuardarClicked(object sender, EventArgs e)
+{
+    if (ViewModel.GuardarCommand.CanExecute(null))
     {
-        var nuevo = new Departamento
-        {
-            Nombre = NombreEntry.Text,
-            Direccion = DireccionEntry.Text,
-            Precio = decimal.TryParse(PrecioEntry.Text, out var p) ? p : 0,
-            CuartosDisponibles = int.TryParse(CuartosEntry.Text, out var c) ? c : 0,
-            Imagen = _imagenBase64,
-            UsuarioId = Sesion.UsuarioId // Esto para que se asigne el departamento directo al usuario logueado
-        };
-
-        bool ok = await _service.CrearDepartamentoAsync(nuevo);
-
-        if (ok)
-        {
-            await DisplayAlert("Éxito", "Departamento registrado", "OK");
-            await Navigation.PopAsync(); // Regresa a la lista
-        }
-        else
-        {
-            await DisplayAlert("Error", "No se pudo registrar", "OK");
-        }
+        ViewModel.GuardarCommand.Execute(null);
+        await DisplayAlert("Éxito", "Departamento registrado", "OK");
+        await Navigation.PopAsync();
     }
+}
+
 }

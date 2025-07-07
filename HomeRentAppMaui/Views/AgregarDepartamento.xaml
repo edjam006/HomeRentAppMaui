@@ -15,10 +15,10 @@
                 <Image x:Name="PreviewImage" HeightRequest="200"/>
                 <Button Text="Seleccionar Imagen" Clicked="OnSeleccionarImagenClicked" Style="{StaticResource VerButtonStyle}"/>
 
-                <Entry x:Name="NombreEntry" Placeholder="Nombre" />
-                <Entry x:Name="DireccionEntry" Placeholder="Dirección" />
-                <Entry x:Name="PrecioEntry" Placeholder="Precio" Keyboard="Numeric"/>
-                <Entry x:Name="CuartosEntry" Placeholder="Cuartos Disponibles" Keyboard="Numeric"/>
+                <Entry Placeholder="Nombre" Text="{Binding NuevoDepartamento.Nombre}" />
+                <Entry Placeholder="Dirección" Text="{Binding NuevoDepartamento.Direccion}" />
+                <Entry Placeholder="Precio" Text="{Binding NuevoDepartamento.Precio}" Keyboard="Numeric"/>
+                <Entry Placeholder="Cuartos Disponibles" Text="{Binding NuevoDepartamento.CuartosDisponibles}" Keyboard="Numeric"/>
 
                 <Button Text="Guardar"
                         Clicked="OnGuardarClicked"
