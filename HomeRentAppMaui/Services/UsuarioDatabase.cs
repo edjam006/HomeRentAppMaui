@@ -20,10 +20,9 @@ namespace HomeRentAppMaui.Services
             return _database.InsertAsync(usuario);
         }
 
-        public Task<Usuario?> GetUsuarioPorIdAsync(string id)
-        {
-            return _database.Table<Usuario>().Where(u => u.UsuarioId == id).FirstOrDefaultAsync();
-        }
+        public Task<Usuario?> GetUsuarioPorIdAsync(string id) =>
+            _database.Table<Usuario>().FirstOrDefaultAsync(u => u.UsuarioId == id);
+
 
         public Task<Usuario?> ValidarLoginAsync(string id, string contrasena)
         {
@@ -37,5 +36,6 @@ namespace HomeRentAppMaui.Services
         {
             return _database.Table<Usuario>().ToListAsync();
         }
+
     }
 }
