@@ -25,8 +25,15 @@ namespace HomeRentAppMaui.Views
             if (resultado != null)
             {
                 Sesion.UsuarioId = resultado.UsuarioId;
+
+                // Primero establece AppShell como página principal
+                Application.Current.MainPage = new AppShell();
+
+                // Luego navega al tab principal
                 await Shell.Current.GoToAsync("//DepartamentoPage");
             }
+
+
             else
             {
                 await DisplayAlert("Error", "Usuario o contraseña incorrectos", "OK");
@@ -34,11 +41,11 @@ namespace HomeRentAppMaui.Views
         }
 
 
-
         private async void irAregistro_Clicked(object sender, EventArgs e)
         {
+            Application.Current.MainPage = new AppShell();
             await Shell.Current.GoToAsync("//RegistroPage");
-
         }
+
     }
 }

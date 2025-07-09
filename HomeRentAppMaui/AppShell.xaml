@@ -36,5 +36,11 @@
             ContentTemplate="{DataTemplate views:AgregarDepartamentoPage}" 
             Route="AgregarDepartamento"
             Icon="perfil.png" />
+        <ShellContent 
+            Title="CERRAR SESIÓN"
+            ContentTemplate="{DataTemplate views:CerrarSesionPage}" 
+            Route="CerrarSesionPage"
+            Icon="logout.png" />
+
     </TabBar>
 </Shell>

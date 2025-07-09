@@ -34,7 +34,8 @@
                     HeightRequest="40"
                     TextColor="Black"
                     BackgroundColor="Transparent"
-                    Clicked="irAregistro_Clicked" />
+                    Clicked="irAregistro_Clicked"
+                     />
             </StackLayout>
         </VerticalStackLayout>
     </Grid>
