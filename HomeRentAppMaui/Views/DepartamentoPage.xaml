@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:HomeRentAppShared.Models;assembly=HomeRentAppShared"
              xmlns:helpers="clr-namespace:HomeRentAppMaui.Helpers"
-             x:Class="HomeRentAppMaui.Views.DepartamentoPage">
+             x:Class="HomeRentAppMaui.Views.DepartamentoPage"
+             x:Name="DepartamentoViewPage">
+
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -36,7 +38,11 @@
                                     <Label Text="{Binding Direccion}" FontSize="14" TextColor="#666" />
                                     <Label Text="{Binding Precio, StringFormat='Precio: {0:C}'}" FontSize="14" />
                                     <Label Text="{Binding CuartosDisponibles, StringFormat='Cuartos: {0}'}" FontSize="14" />
-                                    <Button Text="Ver Departamento" Style="{StaticResource VerButtonStyle}" />
+                                    <Button Text="Ver Departamento"
+                                        Style="{StaticResource VerButtonStyle}"
+                                        Command="{Binding Source={x:Reference DepartamentoViewPage}, Path=BindingContext.VerDepartamentoCommand}"
+                                        CommandParameter="{Binding .}" />       
+
                                 </VerticalStackLayout>
                             </Frame>
                         </DataTemplate>

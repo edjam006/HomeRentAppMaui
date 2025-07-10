@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using HomeRentAppMaui.Helpers;
 using HomeRentAppMaui.Services;
+using HomeRentAppMaui.Views;
 using HomeRentAppShared.Models;
 
 namespace HomeRentAppMaui.ViewModels
@@ -26,11 +27,16 @@ namespace HomeRentAppMaui.ViewModels
         public ObservableCollection<Departamento> Departamentos { get; set; } = new();
 
         public ICommand GuardarCommand { get; set; }
+        public ICommand VerDepartamentoCommand { get; set; }
 
         public DepartamentoLocalViewModel()
         {
-            _db = App.DepartamentoDB; // Asegúrate de instanciarlo en App.xaml.cs
+            _db = App.DepartamentoDB;
             GuardarCommand = new Command(async () => await GuardarDepartamento());
+            VerDepartamentoCommand = new Command<Departamento>(async (departamento) =>
+            {
+                await Shell.Current.Navigation.PushAsync(new DetalleDepartamentoPage(departamento));
+            });
             _ = CargarDepartamentos();
         }
 
@@ -52,6 +58,9 @@ namespace HomeRentAppMaui.ViewModels
             NuevoDepartamento = new Departamento(); // Limpia los campos
             await CargarDepartamentos(); // Refresca la lista en la vista
         }
+
+
+
 
         public async Task CargarDepartamentos()
         {

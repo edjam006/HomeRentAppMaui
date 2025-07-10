@@ -1,0 +1,31 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:HomeRentAppShared.Models;assembly=HomeRentAppShared"
+             x:Class="HomeRentAppMaui.Views.DetalleDepartamentoPage"
+             Title="Detalle del Departamento">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Image x:Name="MainImage"
+                   HeightRequest="200"
+                   Aspect="AspectFill" />
+
+            <Label x:Name="NombreLabel" FontAttributes="Bold" FontSize="22"/>
+            <Label x:Name="DireccionLabel" FontSize="18" TextColor="Gray"/>
+            <Label x:Name="PrecioLabel" FontSize="18"/>
+            <Label x:Name="CuartosLabel" FontSize="18"/>
+            <BoxView HeightRequest="1" BackgroundColor="LightGray" />
+
+            <Label Text="Publicado por" FontAttributes="Bold" FontSize="16"/>
+            <Label x:Name="NombreUsuarioLabel" FontSize="16"/>
+            <Label x:Name="CorreoUsuarioLabel" FontSize="16"/>
+
+            <Button Text="Contactarnos"
+                    BackgroundColor="#ff0066"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="8"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
